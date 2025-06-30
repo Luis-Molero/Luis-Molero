@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Luis-Molero
-- 👀 I’m interested in learning code
-- 🌱 I’m currently learning python/django
+- 👀 I’m interested in learning new technologies
+- 🌱 I’m a python/django developer
 - 💞️ I’m looking to collaborate on productive projects 
 
 
