@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy & Terms of Service — MoneyPrinter</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0f;
+      color: #e2e8f0;
+      line-height: 1.75;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+      border-bottom: 1px solid #1e293b;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid #334155;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: #94a3b8;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover, nav a.active {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-color: #334155;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    .doc { display: none; }
+    .doc.active { display: block; }
+
+    .doc-header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .doc-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #f1f5f9, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .meta span {
+      font-size: 13px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta span::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+      display: inline-block;
+    }
+
+    section {
+      margin-bottom: 44px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: #94a3b8;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 12px;
+    }
+
+    ul li {
+      color: #94a3b8;
+      font-size: 15px;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #6366f1;
+      font-size: 13px;
+    }
+
+    .highlight-box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-left: 3px solid #6366f1;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 14px;
+      color: #7c8fa8;
+    }
+
+    .highlight-box strong {
+      color: #cbd5e1;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #0f172a, #1a1a2e);
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 16px;
+    }
+
+    .contact-card p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .contact-card a {
+      color: #818cf8;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    .toc {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .toc p {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #475569;
+      margin-bottom: 10px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 14px;
+      color: #64748b;
+      text-decoration: none;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+
+    .toc a:hover { color: #818cf8; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #1e293b;
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      nav a span { display: none; }
+      .doc-header h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MoneyPrinter</div>
+  <div class="badge">Legal</div>
+  <nav>
+    <a href="#" class="active" id="btn-privacy" onclick="show('privacy', this)">Privacy Policy</a>
+    <a href="#" id="btn-terms" onclick="show('terms', this)">Terms of Service</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- ───────────────── PRIVACY POLICY ───────────────── -->
+  <div class="doc active" id="doc-privacy">
+
+    <div class="doc-header">
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        <span>Effective: January 1, 2025</span>
+        <span>Last updated: January 1, 2025</span>
+        <span>App: MoneyPrinter</span>
+      </div>
+    </div>
+
+    <div class="toc">
+      <p>Contents</p>
+      <a href="#p1">1. Overview</a>
+      <a href="#p2">2. Information We Collect</a>
+      <a href="#p3">3. How We Use Your Information</a>
+      <a href="#p4">4. TikTok API Data Usage</a>
+      <a href="#p5">5. Data Storage & Security</a>
+      <a href="#p6">6. Data Sharing</a>
+      <a href="#p7">7. Your Rights</a>
+      <a href="#p8">8. Cookies</a>
+      <a href="#p9">9. Children's Privacy</a>
+      <a href="#p10">10. Changes to This Policy</a>
+      <a href="#p11">11. Contact</a>
+    </div>
+
+    <section id="p1">
+      <h2><span class="num">1</span> Overview</h2>
+      <p>MoneyPrinter ("we", "our", or "the application") is a personal, locally-hosted video generation tool. This Privacy Policy explains how we handle information when you use the application, including when it interacts with the TikTok API on your behalf.</p>
+      <div class="highlight-box">
+        <p><strong>Short version:</strong> MoneyPrinter runs locally on your machine. We do not operate servers, collect your data, or share anything with third parties beyond what is strictly required to post content to TikTok and YouTube on your behalf.</p>
+      </div>
+    </section>
+
+    <section id="p2">
+      <h2><span class="num">2</span> Information We Collect</h2>
+      <p>The application collects and processes the following data locally on your device:</p>
+      <ul>
+        <li><strong>TikTok OAuth tokens</strong> — access token and refresh token stored locally in your <code>.env</code> file to authenticate API requests</li>
+        <li><strong>Job data</strong> — video topics, generated scripts, file paths, and job status stored in a local SQLite or PostgreSQL database</li>
+        <li><strong>Generated video files</strong> — temporary and final <code>.mp4</code> files stored on your local filesystem</li>
+        <li><strong>API keys</strong> — Pexels, TikTok, AssemblyAI, and YouTube credentials stored in your local <code>.env</code> file</li>
+      </ul>
+      <p>We do not collect, transmit, or store any of this data on external servers operated by us.</p>
+    </section>
+
+    <section id="p3">
+      <h2><span class="num">3</span> How We Use Your Information</h2>
+      <p>Data processed by the application is used solely for:</p>
+      <ul>
+        <li>Generating video scripts via locally-running AI models (Ollama)</li>
+        <li>Converting scripts to speech via the TikTok TTS API</li>
+        <li>Searching and downloading stock footage via the Pexels API</li>
+        <li>Composing and rendering the final video on your device</li>
+        <li>Uploading the finished video to your TikTok and/or YouTube account when you choose to do so</li>
+      </ul>
+    </section>
+
+    <section id="p4">
+      <h2><span class="num">4</span> TikTok API Data Usage</h2>
+      <p>MoneyPrinter uses the TikTok Content Posting API. By authorizing the application, you grant it permission to:</p>
+      <ul>
+        <li>Upload videos to your TikTok account on your behalf (<code>video.publish</code>, <code>video.upload</code> scopes)</li>
+        <li>Read basic account information to confirm authentication status</li>
+      </ul>
+      <div class="highlight-box">
+        <p><strong>We do not access, store, or share:</strong> your TikTok followers, messages, feed, liked videos, or any personal profile data beyond what is returned by the authentication handshake.</p>
+      </div>
+      <p>Your TikTok OAuth tokens are stored only on your local device and are never transmitted to any server operated by MoneyPrinter. Token refresh happens directly between your device and TikTok's servers.</p>
+      <p>MoneyPrinter's use of TikTok API data complies with the <a href="https://developers.tiktok.com/doc/tiktok-api-developer-data-usage-policy" target="_blank" style="color:#818cf8">TikTok API Developer Data Usage Policy</a>.</p>
+    </section>
+
+    <section id="p5">
+      <h2><span class="num">5</span> Data Storage & Security</h2>
+      <ul>
+        <li>All data is stored locally on your own machine or self-hosted server</li>
+        <li>Credentials are stored in a <code>.env</code> file that you control — keep this file private and out of version control</li>
+        <li>Temporary video files are automatically cleaned up after each job completes</li>
+        <li>We recommend running the application behind a firewall and not exposing it to the public internet</li>
+      </ul>
+    </section>
+
+    <section id="p6">
+      <h2><span class="num">6</span> Data Sharing</h2>
+      <p>We do not sell, rent, or share your data with any third party. The only outbound data flows are:</p>
+      <ul>
+        <li><strong>TikTok</strong> — video content and metadata you explicitly choose to publish</li>
+        <li><strong>YouTube</strong> — video content and metadata you explicitly choose to publish</li>
+        <li><strong>Pexels</strong> — search queries to find stock footage (no personal data)</li>
+        <li><strong>AssemblyAI</strong> — audio files for subtitle transcription, if configured (subject to AssemblyAI's own privacy policy)</li>
+      </ul>
+    </section>
+
+    <section id="p7">
+      <h2><span class="num">7</span> Your Rights</h2>
+      <p>Because all data is stored locally on your own device, you have full control at all times:</p>
+      <ul>
+        <li><strong>Access:</strong> inspect your local database or <code>.env</code> file at any time</li>
+        <li><strong>Deletion:</strong> delete your local database, generated files, or the entire application to remove all data</li>
+        <li><strong>Revocation:</strong> revoke TikTok or YouTube OAuth access at any time from your account settings on those platforms</li>
+      </ul>
+    </section>
+
+    <section id="p8">
+      <h2><span class="num">8</span> Cookies</h2>
+      <p>MoneyPrinter is a locally-hosted application and does not use cookies or browser tracking of any kind. The TikTok <code>sessionid</code> cookie used for TTS is read from your own browser session and stored only in your local <code>.env</code> file.</p>
+    </section>
+
+    <section id="p9">
+      <h2><span class="num">9</span> Children's Privacy</h2>
+      <p>MoneyPrinter is intended for use by individuals aged 13 and older. We do not knowingly collect or process data from children under 13. The application should not be used to create or upload content targeting children without appropriate compliance with applicable laws (COPPA, etc.).</p>
+    </section>
+
+    <section id="p10">
+      <h2><span class="num">10</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be reflected by updating the "Last updated" date at the top of this page. Continued use of the application after changes constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section id="p11">
+      <h2><span class="num">11</span> Contact</h2>
+      <div class="contact-card">
+        <p><strong style="color:#e2e8f0">MoneyPrinter — Personal Video Generation Tool</strong></p>
+        <p>This is a personal/open-source project. For questions about data handling, open an issue on the project repository or contact the maintainer directly.</p>
+        <p style="margin-top:12px">📧 <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>🔗 <a href="https://github.com/yourrepo/moneyprinter" target="_blank">github.com/yourrepo/moneyprinter</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ───────────────── TERMS OF SERVICE ───────────────── -->
+  <div class="doc" id="doc-terms">
+
+    <div class="doc-header">
+      <h1>Terms of Service</h1>
+      <div class="meta">
+        <span>Effective: January 1, 2025</span>
+        <span>Last updated: January 1, 2025</span>
+        <span>App: MoneyPrinter</span>
+      </div>
+    </div>
+
+    <div class="toc">
+      <p>Contents</p>
+      <a href="#t1">1. Acceptance of Terms</a>
+      <a href="#t2">2. Description of Service</a>
+      <a href="#t3">3. TikTok API Usage</a>
+      <a href="#t4">4. User Responsibilities</a>
+      <a href="#t5">5. Prohibited Uses</a>
+      <a href="#t6">6. Content Ownership</a>
+      <a href="#t7">7. Third-Party Services</a>
+      <a href="#t8">8. Disclaimer of Warranties</a>
+      <a href="#t9">9. Limitation of Liability</a>
+      <a href="#t10">10. Indemnification</a>
+      <a href="#t11">11. Termination</a>
+      <a href="#t12">12. Governing Law</a>
+      <a href="#t13">13. Contact</a>
+    </div>
+
+    <section id="t1">
+      <h2><span class="num">1</span> Acceptance of Terms</h2>
+      <p>By installing, configuring, or using MoneyPrinter (the "Application"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Application.</p>
+    </section>
+
+    <section id="t2">
+      <h2><span class="num">2</span> Description of Service</h2>
+      <p>MoneyPrinter is a locally-hosted, open-source tool that automates the creation of short-form vertical videos using AI-generated scripts, text-to-speech synthesis, stock footage, and optional automatic upload to TikTok and YouTube.</p>
+      <div class="highlight-box">
+        <p><strong>The Application runs entirely on your own machine.</strong> There is no cloud service, subscription, or managed backend operated by the maintainers.</p>
+      </div>
+    </section>
+
+    <section id="t3">
+      <h2><span class="num">3</span> TikTok API Usage</h2>
+      <p>MoneyPrinter integrates with the TikTok Content Posting API. By using this integration you agree to:</p>
+      <ul>
+        <li>Comply with the <a href="https://www.tiktok.com/legal/page/global/terms-of-service/en" target="_blank" style="color:#818cf8">TikTok Terms of Service</a></li>
+        <li>Comply with the <a href="https://developers.tiktok.com/doc/developer-agreement" target="_blank" style="color:#818cf8">TikTok Developer Agreement</a></li>
+        <li>Comply with <a href="https://developers.tiktok.com/doc/tiktok-api-developer-data-usage-policy" target="_blank" style="color:#818cf8">TikTok's API Developer Data Usage Policy</a></li>
+        <li>Not use the TikTok integration to upload content that violates TikTok's Community Guidelines</li>
+        <li>Not use the TikTok integration to automate spam, inauthentic behavior, or engagement manipulation</li>
+      </ul>
+      <p>Violation of TikTok's policies may result in suspension of your TikTok developer app or account. The maintainers of MoneyPrinter are not responsible for any such actions taken by TikTok.</p>
+    </section>
+
+    <section id="t4">
+      <h2><span class="num">4</span> User Responsibilities</h2>
+      <p>You are solely responsible for:</p>
+      <ul>
+        <li>All content generated and published using the Application</li>
+        <li>Securing your API keys, OAuth tokens, and local database</li>
+        <li>Ensuring content you publish complies with applicable laws and platform policies</li>
+        <li>Obtaining any necessary rights or licenses for music, footage, or other third-party assets used in generated videos</li>
+        <li>Complying with copyright law regarding AI-generated content in your jurisdiction</li>
+        <li>Disclosing AI-generated content where required by platform policies (including TikTok's AI content labeling requirements)</li>
+      </ul>
+    </section>
+
+    <section id="t5">
+      <h2><span class="num">5</span> Prohibited Uses</h2>
+      <p>You may not use MoneyPrinter to:</p>
+      <ul>
+        <li>Create or distribute misinformation, deepfakes, or deceptive content</li>
+        <li>Harass, threaten, or abuse any individual or group</li>
+        <li>Violate any applicable local, national, or international law or regulation</li>
+        <li>Infringe the intellectual property rights of any third party</li>
+        <li>Generate content that sexualizes minors or violates child safety laws</li>
+        <li>Engage in coordinated inauthentic behavior, spam, or platform manipulation</li>
+        <li>Circumvent rate limits or usage restrictions of any third-party API</li>
+      </ul>
+    </section>
+
+    <section id="t6">
+      <h2><span class="num">6</span> Content Ownership</h2>
+      <p>You retain ownership of all content you create using MoneyPrinter, subject to the rights and licenses granted to TikTok and YouTube under their respective Terms of Service when you choose to publish content on those platforms.</p>
+      <p>Stock footage downloaded via the Pexels API is subject to the <a href="https://www.pexels.com/license/" target="_blank" style="color:#818cf8">Pexels License</a>. You are responsible for complying with attribution and usage requirements.</p>
+    </section>
+
+    <section id="t7">
+      <h2><span class="num">7</span> Third-Party Services</h2>
+      <p>MoneyPrinter integrates with the following third-party services. Use of each is subject to their own terms:</p>
+      <ul>
+        <li><strong>TikTok</strong> — tiktok.com/legal</li>
+        <li><strong>YouTube / Google</strong> — policies.google.com</li>
+        <li><strong>Pexels</strong> — pexels.com/license</li>
+        <li><strong>AssemblyAI</strong> — assemblyai.com/legal</li>
+        <li><strong>Ollama</strong> — ollama.com/terms</li>
+      </ul>
+      <p>The maintainers of MoneyPrinter are not affiliated with and do not endorse any of these services.</p>
+    </section>
+
+    <section id="t8">
+      <h2><span class="num">8</span> Disclaimer of Warranties</h2>
+      <p>MoneyPrinter is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+      <p>We do not warrant that the Application will be error-free, uninterrupted, or that any generated content will meet your expectations or comply with any platform's policies.</p>
+    </section>
+
+    <section id="t9">
+      <h2><span class="num">9</span> Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, the maintainers of MoneyPrinter shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+      <ul>
+        <li>Loss of revenue or profits from content published using the Application</li>
+        <li>Suspension or termination of your TikTok or YouTube account</li>
+        <li>Data loss resulting from crashes, bugs, or improper use</li>
+        <li>Copyright claims arising from generated or published content</li>
+      </ul>
+    </section>
+
+    <section id="t10">
+      <h2><span class="num">10</span> Indemnification</h2>
+      <p>You agree to indemnify and hold harmless the maintainers of MoneyPrinter from any claims, damages, losses, or expenses (including legal fees) arising from your use of the Application, your violation of these Terms, or your violation of any third-party rights or platform policies.</p>
+    </section>
+
+    <section id="t11">
+      <h2><span class="num">11</span> Termination</h2>
+      <p>These Terms remain in effect as long as you use the Application. You may stop using the Application at any time. The maintainers reserve the right to discontinue the project or revoke access to the TikTok Developer App at any time without notice.</p>
+    </section>
+
+    <section id="t12">
+      <h2><span class="num">12</span> Governing Law</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the maintainer resides, without regard to conflict of law provisions.</p>
+    </section>
+
+    <section id="t13">
+      <h2><span class="num">13</span> Contact</h2>
+      <div class="contact-card">
+        <p><strong style="color:#e2e8f0">MoneyPrinter — Personal Video Generation Tool</strong></p>
+        <p>Questions about these Terms? Contact the maintainer or open an issue on the project repository.</p>
+        <p style="margin-top:12px">📧 <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>🔗 <a href="https://github.com/yourrepo/moneyprinter" target="_blank">github.com/yourrepo/moneyprinter</a></p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  function show(doc, btn) {
+    event.preventDefault();
+    document.querySelectorAll('.doc').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    document.getElementById('doc-' + doc).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
